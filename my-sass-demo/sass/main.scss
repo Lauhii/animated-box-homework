@@ -1,0 +1,56 @@
+@import "reset";
+@import "mixins";
+@import "constants";
+
+body {
+    @include flex-box($dir: column);
+    font-size: 5rem;
+    perspective: 500px;
+    .header{
+        cursor: pointer;
+        margin-bottom: 10rem;
+        margin-top: 5rem;
+        color: lighten(indigo ,10%);
+        font-family: Helvetica;
+        text-shadow: 0px 0px 5px purple;
+        transition: text-shadow 300ms,
+                         color 300ms;
+
+
+        &:hover{
+            text-shadow: 0px 0px 15px skyblue;
+            color: indigo;
+        }                  
+    }
+    #wrapper {
+        box-shadow: 0px 10px 50px gray;
+        cursor: pointer;
+        border-radius: 5px;
+        width: 200px;
+        height: 200px;
+        border: 50px solid royalblue;
+        background: (#6b8ae5);
+
+        transition:transform 300ms cubic-bezier(0.88,0.26,0.43,0.86);
+
+        transform-origin: 50% 100%;        
+        perspective: 500px;
+
+        #app{
+            width: 200px;
+            height: 200px;
+            background: purple;
+            transition:transform 300ms cubic-bezier(0.20,0.10,0.43,0.220);
+            
+        }
+        &:hover {
+            transform: rotateX(-30deg);
+
+            #app{
+                transform: translate(0, 153px) rotateX(70deg) scaleX(1.2);
+                background-color: darken(purple, 10%);
+            }
+        }    
+    
+}
+}
